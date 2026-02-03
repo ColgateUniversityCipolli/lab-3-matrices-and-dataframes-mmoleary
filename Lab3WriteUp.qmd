@@ -100,15 +100,15 @@ ggplot() +
 ```
 
 The unit square can be defined by two basis vectors
-$$\mathbf{v}_1=\begin{bmatrix} 1 \\ 0 \end{bmatrix} ~~~ \textrm{and} ~~~ \mathbf{v}_2=\begin{bmatrix} 1 \\ 0 \end{bmatrix}.$$
-From these vectors, we can compute the corner verticies.
+$$\mathbf{v}_1=\begin{bmatrix} 1 \\ 0 \end{bmatrix} ~~~ \textrm{and} ~~~ \mathbf{v}_2=\begin{bmatrix} 0 \\ 1 \end{bmatrix}.$$
+From these vectors, we can compute the corner vertices.
 \begin{align*}
   p_0 & = (0,0) = (x_0, y_0) \tag{The origin}\\
-  p_1 & = v_1 = (x_1, y_1)   \tag{The first basis vector}\\
-  p_2 & = v_1 + v_2 = (x_2, y_2) \tag{The sum of basis vectors}\\
-  p_3 & = v_1 = (x_3, y_3)  \tag{The second basis vector}\\
+  p_1 & = v_1 = (x_1, y_1) = (1,0)  \tag{The first basis vector}\\
+  p_2 & = v_1 + v_2 = (x_2, y_2)= (1,1) \tag{The sum of basis vectors}\\
+  p_3 & = v_2 = (x_3, y_3) =(0,1) \tag{The second basis vector}\\
 \end{align*}
-Note that the segments that form the boundary go from $p_0$ to $p_1$ to $p_2$ to $p_3$.
+Note that the segments that form the boundary go from $p_0$ to $p_1$ to $p_2$ to $p_3$ and back to $p_0$.
 
 Consider the matrix $M$ to be the matrix we get from binding the two basis vectors at the column,
 $$\mathbf{M} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}.$$
