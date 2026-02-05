@@ -425,11 +425,19 @@ Create a data frame `ladder` with the following data. Note your data frame shoul
 | 1    | 6    |    5 | 0    | 18   |   11 |
 | 0    | 8    |    6 | 1    | 18   |   11 |
 
+**Solution**
+
+```{r}
+x = c(0,0,1,1, rep(c(0,1), times=9))
+y = c(0,20,0,20, rep(seq(from = 2, to= 18, by=2), each= 2))
+group = rep(seq(from=1, to= 11, by=1), each=2)
+ladder = data.frame(x, y, group)
+```
+
 ## Part b
 Remove `#|eval: false` in the code below. The result should look like a ladder and a very rectangular house if part a is correct.
 
 ```{r}
-#| eval: false
 #| label: fig-ladder
 #| fig-cap: "A ladder."
 #| fig-width: 3
@@ -460,14 +468,28 @@ Recall,
 $$\mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k & 1 \end{bmatrix}$$
 and use $k=0.5.$
 
+**Solution**
+
+```{r}
+A = as.matrix(ladder[ ,-3])
+k=0.5
+Mh= matrix(data= c(1, 0, k, 1), nrow=2, ncol = 2, byrow = TRUE)
+T= A %*% Mh
+```
+
 ## Part d
 Create a data frame `leaning.ladder` with the `x` and `y` equal to the first and second column of $\mathbf{T}$, respectively, and the same values of `group` from `ladder`. 
+
+```{r}
+leaning.ladder = data.frame(x=T[, 1],
+                            y=T[, 2], 
+                            group = group)
+```
 
 ## Part e
 Remove `eval: false` in the code below. The result should look like a ladder and a very rectangular house if part a is correct. The new leaning ladder should look like it is leaning on the house.
 
 ```{r}
-#| eval: false
 #| label: fig-ladder2
 #| fig-cap: "A ladder and a leaning ladder."
 #| fig-width: 3
