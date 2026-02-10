@@ -124,6 +124,7 @@ $$\mathbf{A} = \begin{bmatrix} 1 & -7 \\ 5 & 9 \end{bmatrix}$$
 ```{r}
 #| size: scriptsize
 A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
+A
 #I made a matrix that went by row instead of by column.
 ```
 
@@ -137,6 +138,7 @@ $$\mathbf{T} = \mathbf{A}\mathbf{M}.$$
 #| size: scriptsize
 M = matrix(data = c(1, 0, 0, 1), nrow = 2, ncol = 2, byrow = TRUE) # Making the matrix, M
 T = A%*%M #Multiplying the matrices and naming them T
+T
 ```
 
 ## Part c
@@ -146,8 +148,9 @@ Create `basis.vector.1` (first column of `T`) and `basis.vector.2` (second colum
 ```{r}
 #| size: "scriptsize"
 basis.vector.1 = c(1,5) 
-basis.vector.2 = c(-7,9) 
-#I used a manual vector for both
+basis.vector.2 = c(-7,9) #I used a manual vector because there were only two data points.
+basis.vector.1
+basis.vector.2
 ```
 
 ## Part d
@@ -160,7 +163,11 @@ Compute the points $p_0$, $p_1$, $p_2$, and $p_3$.
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
-p3 = basis.vector.2
+p3 = basis.vector.2 #I used the formulas from the unit square example for the corner vertices.
+p0
+p1
+p2
+p3
 ```
 
 ## Part e
@@ -179,7 +186,7 @@ Copy and paste the code for the unit square. Edit the code to draw the segments 
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
-p3 = basis.vector.2
+p3 = basis.vector.2 # I made sure to use the same points as found in part d.
 ggplot() +
   geom_segment(aes(x = p0[1], y = p0[2], xend = p1[1], yend = p1[2])) +
   geom_segment(aes(x = p1[1], y = p1[2], xend = p2[1], yend = p2[2])) +
@@ -214,6 +221,7 @@ $$\mathbf{A} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$$
 #| size: scriptsize
 A = matrix(data = c(1, 2, 2, 4), nrow = 2, ncol = 2, byrow = TRUE) 
 #I made a matrix that went by row instead of by column with new data.
+A
 ```
 
 ## Part b
@@ -221,7 +229,8 @@ Compute the product below in `R` and store it in an object `T`.
 $$\mathbf{T} = \mathbf{A}\mathbf{M}.$$
 
 ```{r}
-T = A %*% M
+T = A %*% M # I made sure to multiply the matrices rather than their components.
+T
 ```
 
 ## Part c
@@ -231,6 +240,8 @@ Create `basis.vector.1` (first column of `T`) and `basis.vector.2` (second colum
 #| size: scriptsize
 basis.vector.1 = c(1,2)
 basis.vector.2 = c(2,4)
+basis.vector.1 
+basis.vector.2
 ```
 
 ## Part d
@@ -243,7 +254,11 @@ Compute the points $p_0$, $p_1$, $p_2$, and $p_3$.
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
-p3 = basis.vector.2
+p3 = basis.vector.2 #same work as 1.4
+p0
+p1
+p2
+p3
 ```
 
 ## Part e
@@ -283,7 +298,7 @@ Interestingly, the determinant of $\mathbf{A}$ gives us the area of the shape pl
 
 ```{r}
 #| size: "scriptsize"
-det(A)
+det(A) #it is a line so this should return 0.
 ```
 
 # Question 3
@@ -302,16 +317,19 @@ Use the following to generate a new shape. Compare the shape and its area to you
 $$\mathbf{M}_v = \begin{bmatrix} 1 & k=0.5 \\ 0 & 1 \end{bmatrix} ~~~~~ \textrm{and} ~~~~~
   \mathbf{A}   = \begin{bmatrix} 1 & -7 \\ 5 & 9 \end{bmatrix}$$
 
+**Solution**
+
 ```{r}
 #| size: "scriptsize"
 Mv = matrix(data= c(1, k=0.5, 0, 1), nrow=2, ncol = 2, byrow = TRUE)
 A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
 T = A%*%Mv
+T
 basis.vector.1 = c(1,5) 
 basis.vector.2 = c(-6.5,11.5) 
 
-#| label: fig-3.2a
-#| fig-cap: "3.2.a"
+#| label: fig-4
+#| fig-cap: "Parallelogram.2."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -330,8 +348,8 @@ ggplot() +
   xlim(-15, 15) +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
-
 ```
+Unlike in Question 1, the parallelogram made in question 2 has 2 longer side lengths and thus a greater area. 
 
 ## Part b
 Use the following to generate a new shape. Compare the shape and its area to your answer in Questions 1 and the vertical shear transform in part (a).
@@ -345,6 +363,7 @@ $$ \mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k=0.5 & 1 \end{bmatrix}~~~~~ \textrm{
 Mh = matrix(data= c(1, 0, k=0.5, 1), nrow=2, ncol = 2, byrow = TRUE)
 A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
 T = A%*%Mh
+T
 basis.vector.1 = c(-2.5,9.5) 
 basis.vector.2 = c(-7,9) 
 
@@ -369,6 +388,8 @@ ggplot() +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
+This parallelogram is also a rhombus with the same side lengths as the longer side in question 1. 
+
 ## Part c
 Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b).
 $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \textrm{and} ~~~~~
@@ -381,6 +402,7 @@ $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \
 Mvh = matrix(data= c(1, k=0.5, k=0.5, 1), nrow=2, ncol = 2, byrow = TRUE)
 A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
 T = A%*%Mvh
+T
 basis.vector.1 = c(-2.5,9.5) 
 basis.vector.2 = c(-6.5,11.5) 
 
@@ -475,6 +497,7 @@ A = as.matrix(ladder[ ,-3])
 k=0.5
 Mh= matrix(data= c(1, 0, k, 1), nrow=2, ncol = 2, byrow = TRUE)
 T= A %*% Mh
+T
 ```
 
 ## Part d
