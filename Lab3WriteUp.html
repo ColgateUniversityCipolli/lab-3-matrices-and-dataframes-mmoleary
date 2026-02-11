@@ -624,7 +624,8 @@ Figure&nbsp;5: Parallelogram 3
 </div>
 </div>
 </div>
-<p> Compared to <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a>, <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a> is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.</p>
+<p></p>
+<p>Compared to <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a>, <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a> is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.</p>
 </section>
 <section id="part-c-2" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="part-c-2"><span class="header-section-number">3.3</span> Part c</h2>
@@ -878,7 +879,7 @@ Figure&nbsp;7: A ladder.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>A <span class="ot">=</span> <span class="fu">as.matrix</span>(ladder[ ,<span class="sc">-</span><span class="dv">3</span>]) <span class="co"># this creates a matrix with x and y observations by removing   the group index.</span></span>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>A <span class="ot">=</span> <span class="fu">as.matrix</span>(ladder[ ,<span class="sc">-</span><span class="dv">3</span>]) <span class="co"># a matrix with "ladder" data without the group index.</span></span>
 <span id="cb59-2"><a href="#cb59-2"></a>k<span class="ot">=</span><span class="fl">0.5</span></span>
 <span id="cb59-3"><a href="#cb59-3"></a>Mh<span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, k, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
 <span id="cb59-4"><a href="#cb59-4"></a>T<span class="ot">=</span> A <span class="sc">%*%</span> Mh</span>
@@ -921,7 +922,7 @@ Figure&nbsp;7: A ladder.
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>leaning.ladder <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>T[, <span class="dv">1</span>], <span class="co">#this uses exclusively the first index from T</span></span>
-<span id="cb61-2"><a href="#cb61-2"></a>                            <span class="at">y=</span>T[, <span class="dv">2</span>], <span class="co">#this uses exclusively the first index from T</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>                            <span class="at">y=</span>T[, <span class="dv">2</span>], <span class="co">#this uses exclusively the second index from T</span></span>
 <span id="cb61-3"><a href="#cb61-3"></a>                            <span class="at">group =</span> group)</span>
 <span id="cb61-4"><a href="#cb61-4"></a>leaning.ladder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>

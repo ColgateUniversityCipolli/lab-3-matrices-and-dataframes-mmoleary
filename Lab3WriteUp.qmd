@@ -145,6 +145,7 @@ T
 Create `basis.vector.1` (first column of `T`) and `basis.vector.2` (second column of `T`) in `R`.
 
 **Solution**
+
 ```{r}
 #| size: "scriptsize"
 basis.vector.1 = c(1,5) 
@@ -390,8 +391,8 @@ ggplot() +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-Compared to @fig-4, @fig-5 is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.
 
+Compared to @fig-4, @fig-5 is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.
 
 ## Part c
 Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b).
@@ -499,7 +500,7 @@ and use $k=0.5.$
 **Solution**
 
 ```{r}
-A = as.matrix(ladder[ ,-3]) # this creates a matrix with x and y observations by removing   the group index.
+A = as.matrix(ladder[ ,-3]) # a matrix with "ladder" data without the group index.
 k=0.5
 Mh= matrix(data= c(1, 0, k, 1), nrow=2, ncol = 2, byrow = TRUE) 
 T= A %*% Mh
@@ -510,9 +511,10 @@ T
 Create a data frame `leaning.ladder` with the `x` and `y` equal to the first and second column of $\mathbf{T}$, respectively, and the same values of `group` from `ladder`. 
 
 **Solution**
+
 ```{r}
 leaning.ladder = data.frame(x=T[, 1], #this uses exclusively the first index from T
-                            y=T[, 2], #this uses exclusively the first index from T
+                            y=T[, 2], #this uses exclusively the second index from T
                             group = group)
 leaning.ladder
 ```
