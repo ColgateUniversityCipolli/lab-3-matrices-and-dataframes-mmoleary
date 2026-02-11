@@ -550,3 +550,7 @@ ggplot() +
   ylim(-2,22) +
   scale_color_manual("", values=c("darkred", "grey"))
 ```
+
+# Citations
+
+I used the tidyverse package [@tidyverse] for developing figures and R [@R] as my coding program.
