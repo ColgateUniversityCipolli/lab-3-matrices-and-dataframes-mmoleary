@@ -177,7 +177,7 @@ Copy and paste the code for the unit square. Edit the code to draw the segments 
 
 ```{r}
 #| label: fig-1.5e
-#| fig-cap: "Parallelogram.1."
+#| fig-cap: "Parallelogram 1."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -268,7 +268,7 @@ Copy and paste the code for plotting the unit square. Edit the code to draw the 
 
 ```{r}
 #| label: fig-2.5e
-#| fig-cap: "Line.1."
+#| fig-cap: "Line 1."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -320,21 +320,21 @@ $$\mathbf{M}_v = \begin{bmatrix} 1 & k=0.5 \\ 0 & 1 \end{bmatrix} ~~~~~ \textrm{
 **Solution**
 
 ```{r}
-#| size: "scriptsize"
-Mv = matrix(data= c(1, k=0.5, 0, 1), nrow=2, ncol = 2, byrow = TRUE)
-A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
-T = A%*%Mv
-T
-basis.vector.1 = c(1,5) 
-basis.vector.2 = c(-6.5,11.5) 
-
 #| label: fig-4
-#| fig-cap: "Parallelogram.2."
+#| fig-cap: "Parallelogram 2."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
 #| fig-align: "center"
 #| size: "scriptsize"
+Mv = matrix(data= c(1, k=0.5, 0, 1), nrow=2, ncol = 2, byrow = TRUE)
+A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
+T = A%*%Mv
+T
+det(A) #For area of the parallelogram
+basis.vector.1 = c(1,5) 
+basis.vector.2 = c(-6.5,11.5) 
+
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
@@ -349,7 +349,7 @@ ggplot() +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-Unlike in Question 1, the parallelogram made in question 2 has 2 longer side lengths and thus a greater area. 
+ @fig-4 has different side lengths and angles than @fig-1.5e (giving it a stretched appearance), however their areas are the same, as shown by them having the same determinants of their respective matrix A.
 
 ## Part b
 Use the following to generate a new shape. Compare the shape and its area to your answer in Questions 1 and the vertical shear transform in part (a).
@@ -359,25 +359,27 @@ $$ \mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k=0.5 & 1 \end{bmatrix}~~~~~ \textrm{
 **Solution**
 
 ```{r}
-#| size: "scriptsize"
-Mh = matrix(data= c(1, 0, k=0.5, 1), nrow=2, ncol = 2, byrow = TRUE)
-A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
-T = A%*%Mh
-T
-basis.vector.1 = c(-2.5,9.5) 
-basis.vector.2 = c(-7,9) 
-
-#| label: fig-3.2.b
-#| fig-cap: "3.2.b."
+#| label: fig-5
+#| fig-cap: "Parallelogram 3"
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
 #| fig-align: "center"
 #| size: "scriptsize"
+
+Mh = matrix(data= c(1, 0, k=0.5, 1), nrow=2, ncol = 2, byrow = TRUE)
+A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
+T = A%*%Mh
+T
+det(A) #For area of the parallelogram
+
+basis.vector.1 = c(-2.5,9.5) 
+basis.vector.2 = c(-7,9) 
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
 p3 = basis.vector.2
+
 ggplot() +
   geom_segment(aes(x = p0[1], y = p0[2], xend = p1[1], yend = p1[2])) +
   geom_segment(aes(x = p1[1], y = p1[2], xend = p2[1], yend = p2[2])) +
@@ -388,7 +390,8 @@ ggplot() +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-This parallelogram is also a rhombus with the same side lengths as the longer side in question 1. 
+Compared to @fig-4, @fig-5 is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.
+
 
 ## Part c
 Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b).
@@ -398,21 +401,21 @@ $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \
 **Solution**
 
 ```{r}
-#| size: "scriptsize"
+#| label: fig-6
+#| fig-cap: "Parallelogram 4"
+#| fig-width: 3
+#| fig-height: 3
+#| scale: "80%"
+#| fig-align: "center"#| size: "scriptsize"
+
 Mvh = matrix(data= c(1, k=0.5, k=0.5, 1), nrow=2, ncol = 2, byrow = TRUE)
 A = matrix(data = c(1, -7, 5, 9), nrow = 2, ncol = 2, byrow = TRUE) 
 T = A%*%Mvh
 T
+det(A) #For area of the parallelogram
+
 basis.vector.1 = c(-2.5,9.5) 
 basis.vector.2 = c(-6.5,11.5) 
-
-#| label: fig-3.2.b
-#| fig-cap: "3.2.b."
-#| fig-width: 3
-#| fig-height: 3
-#| scale: "80%"
-#| fig-align: "center"
-#| size: "scriptsize"
 p0 = c(0,0)
 p1 = basis.vector.1
 p2 = basis.vector.1+basis.vector.2
@@ -427,6 +430,8 @@ ggplot() +
   ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
+
+Similar to the differnce between @fig-4 and @fig-5, @fig-6 is even further stretched compared to the shapes in part a and b. But because it has the same matrix A, it has the same area as the past parallelograms.
 
 # Question 4
 
@@ -450,10 +455,11 @@ Create a data frame `ladder` with the following data. Note your data frame shoul
 **Solution**
 
 ```{r}
-x = c(0,0,1,1, rep(c(0,1), times=9))
+x = c(0,0,1,1, rep(c(0,1), times=9)) 
 y = c(0,20,0,20, rep(seq(from = 2, to= 18, by=2), each= 2))
 group = rep(seq(from=1, to= 11, by=1), each=2)
 ladder = data.frame(x, y, group)
+ladder
 ```
 
 ## Part b
@@ -493,9 +499,9 @@ and use $k=0.5.$
 **Solution**
 
 ```{r}
-A = as.matrix(ladder[ ,-3])
+A = as.matrix(ladder[ ,-3]) # this creates a matrix with x and y observations by removing   the group index.
 k=0.5
-Mh= matrix(data= c(1, 0, k, 1), nrow=2, ncol = 2, byrow = TRUE)
+Mh= matrix(data= c(1, 0, k, 1), nrow=2, ncol = 2, byrow = TRUE) 
 T= A %*% Mh
 T
 ```
@@ -503,14 +509,18 @@ T
 ## Part d
 Create a data frame `leaning.ladder` with the `x` and `y` equal to the first and second column of $\mathbf{T}$, respectively, and the same values of `group` from `ladder`. 
 
+**Solution**
 ```{r}
-leaning.ladder = data.frame(x=T[, 1],
-                            y=T[, 2], 
+leaning.ladder = data.frame(x=T[, 1], #this uses exclusively the first index from T
+                            y=T[, 2], #this uses exclusively the first index from T
                             group = group)
+leaning.ladder
 ```
 
 ## Part e
 Remove `eval: false` in the code below. The result should look like a ladder and a very rectangular house if part a is correct. The new leaning ladder should look like it is leaning on the house.
+
+**Solution**
 
 ```{r}
 #| label: fig-ladder2

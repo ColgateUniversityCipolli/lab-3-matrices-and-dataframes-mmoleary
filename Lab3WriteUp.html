@@ -312,7 +312,7 @@ Figure&nbsp;1: The unit square.
 <div id="fig-1.5e" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-1.5e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Parallelogram.1.
+Figure&nbsp;2: Parallelogram 1.
 </figcaption>
 <div aria-describedby="fig-1.5e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Lab3WriteUp_files/figure-html/fig-1.5e-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
@@ -472,7 +472,7 @@ Figure&nbsp;2: Parallelogram.1.
 <div id="fig-2.5e" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2.5e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Line.1.
+Figure&nbsp;3: Line 1.
 </figcaption>
 <div aria-describedby="fig-2.5e-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Lab3WriteUp_files/figure-html/fig-2.5e-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
@@ -512,7 +512,7 @@ Figure&nbsp;3: Line.1.
   \mathbf{A}   = \begin{bmatrix} 1 &amp; -7 \\ 5 &amp; 9 \end{bmatrix}\]</span></p>
 <p><strong>Solution</strong></p>
 <p></p>
-<div class="cell">
+<div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>Mv <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
@@ -527,39 +527,44 @@ Figure&nbsp;3: Line.1.
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>) </span>
-<span id="cb43-2"><a href="#cb43-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.5</span>,<span class="fl">11.5</span>) </span>
-<span id="cb43-3"><a href="#cb43-3"></a></span>
-<span id="cb43-4"><a href="#cb43-4"></a><span class="co">#| label: fig-4</span></span>
-<span id="cb43-5"><a href="#cb43-5"></a><span class="co">#| fig-cap: "Parallelogram.2."</span></span>
-<span id="cb43-6"><a href="#cb43-6"></a><span class="co">#| fig-width: 3</span></span>
-<span id="cb43-7"><a href="#cb43-7"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb43-8"><a href="#cb43-8"></a><span class="co">#| scale: "80%"</span></span>
-<span id="cb43-9"><a href="#cb43-9"></a><span class="co">#| fig-align: "center"</span></span>
-<span id="cb43-10"><a href="#cb43-10"></a><span class="co">#| size: "scriptsize"</span></span>
-<span id="cb43-11"><a href="#cb43-11"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb43-12"><a href="#cb43-12"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
-<span id="cb43-13"><a href="#cb43-13"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
-<span id="cb43-14"><a href="#cb43-14"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
-<span id="cb43-15"><a href="#cb43-15"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb43-16"><a href="#cb43-16"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb43-17"><a href="#cb43-17"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb43-18"><a href="#cb43-18"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb43-19"><a href="#cb43-19"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb43-20"><a href="#cb43-20"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb43-21"><a href="#cb43-21"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb43-22"><a href="#cb43-22"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb43-23"><a href="#cb43-23"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">det</span>(A) <span class="co">#For area of the parallelogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>) </span>
+<span id="cb45-2"><a href="#cb45-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.5</span>,<span class="fl">11.5</span>) </span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb45-5"><a href="#cb45-5"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb45-14"><a href="#cb45-14"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb45-16"><a href="#cb45-16"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Lab3WriteUp_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Parallelogram 2.
+</figcaption>
+<div aria-describedby="fig-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lab3WriteUp_files/figure-html/fig-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
+</div>
 </figure>
 </div>
 </div>
 </div>
-<p> Unlike in Question 1, the parallelogram made in question 2 has 2 longer side lengths and thus a greater area.</p>
+<p> <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> has different side lengths and angles than <a href="#fig-1.5e" class="quarto-xref">Figure&nbsp;2</a> (giving it a stretched appearance), however their areas are the same, as shown by them having the same determinants of their respective matrix A.</p>
 </section>
 <section id="part-b-2" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="part-b-2"><span class="header-section-number">3.2</span> Part b</h2>
@@ -567,13 +572,13 @@ Figure&nbsp;3: Line.1.
   \mathbf{A}   = \begin{bmatrix} 1 &amp; -7 \\ 5 &amp; 9 \end{bmatrix}\]</span></p>
 <p><strong>Solution</strong></p>
 <p></p>
-<div class="cell">
+<div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>Mh <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb44-2"><a href="#cb44-2"></a>A <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">9</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb44-3"><a href="#cb44-3"></a>T <span class="ot">=</span> A<span class="sc">%*%</span>Mh</span>
-<span id="cb44-4"><a href="#cb44-4"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>Mh <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb46-2"><a href="#cb46-2"></a>A <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">9</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb46-3"><a href="#cb46-3"></a>T <span class="ot">=</span> A<span class="sc">%*%</span>Mh</span>
+<span id="cb46-4"><a href="#cb46-4"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
@@ -582,49 +587,58 @@ Figure&nbsp;3: Line.1.
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="fl">9.5</span>) </span>
-<span id="cb46-2"><a href="#cb46-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">7</span>,<span class="dv">9</span>) </span>
-<span id="cb46-3"><a href="#cb46-3"></a></span>
-<span id="cb46-4"><a href="#cb46-4"></a><span class="co">#| label: fig-3.2.b</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="co">#| fig-cap: "3.2.b."</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a><span class="co">#| fig-width: 3</span></span>
-<span id="cb46-7"><a href="#cb46-7"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb46-8"><a href="#cb46-8"></a><span class="co">#| scale: "80%"</span></span>
-<span id="cb46-9"><a href="#cb46-9"></a><span class="co">#| fig-align: "center"</span></span>
-<span id="cb46-10"><a href="#cb46-10"></a><span class="co">#| size: "scriptsize"</span></span>
-<span id="cb46-11"><a href="#cb46-11"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb46-12"><a href="#cb46-12"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
-<span id="cb46-13"><a href="#cb46-13"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
-<span id="cb46-14"><a href="#cb46-14"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
-<span id="cb46-15"><a href="#cb46-15"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb46-16"><a href="#cb46-16"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb46-17"><a href="#cb46-17"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb46-18"><a href="#cb46-18"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb46-19"><a href="#cb46-19"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb46-20"><a href="#cb46-20"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb46-21"><a href="#cb46-21"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb46-22"><a href="#cb46-22"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb46-23"><a href="#cb46-23"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">det</span>(A) <span class="co">#For area of the parallelogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="fl">9.5</span>) </span>
+<span id="cb50-2"><a href="#cb50-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">7</span>,<span class="dv">9</span>) </span>
+<span id="cb50-3"><a href="#cb50-3"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb50-4"><a href="#cb50-4"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
+<span id="cb50-6"><a href="#cb50-6"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a></span>
+<span id="cb50-8"><a href="#cb50-8"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb50-9"><a href="#cb50-9"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb50-11"><a href="#cb50-11"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb50-12"><a href="#cb50-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb50-13"><a href="#cb50-13"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb50-14"><a href="#cb50-14"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb50-15"><a href="#cb50-15"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb50-16"><a href="#cb50-16"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Lab3WriteUp_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Parallelogram 3
+</figcaption>
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lab3WriteUp_files/figure-html/fig-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
+</div>
 </figure>
 </div>
 </div>
 </div>
-<p> ## Part c Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b). <span class="math display">\[\mathbf{M}_{vh} = \begin{bmatrix} 1 &amp; k=0.5 \\ k=0.5 &amp; 1 \end{bmatrix} ~~~~~ \textrm{and} ~~~~~
+<p> Compared to <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a>, <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a> is significantly stretched and both its acute and obtuse angles are more extreme. But because it has the same matrix A, it has the same area as the past parallelograms.</p>
+</section>
+<section id="part-c-2" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="part-c-2"><span class="header-section-number">3.3</span> Part c</h2>
+<p>Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b). <span class="math display">\[\mathbf{M}_{vh} = \begin{bmatrix} 1 &amp; k=0.5 \\ k=0.5 &amp; 1 \end{bmatrix} ~~~~~ \textrm{and} ~~~~~
   \mathbf{A}   = \begin{bmatrix} 1 &amp; -7 \\ 5 &amp; 9 \end{bmatrix}\]</span></p>
 <p><strong>Solution</strong></p>
 <p></p>
-<div class="cell">
+<div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>Mvh <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb47-2"><a href="#cb47-2"></a>A <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">9</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb47-3"><a href="#cb47-3"></a>T <span class="ot">=</span> A<span class="sc">%*%</span>Mvh</span>
-<span id="cb47-4"><a href="#cb47-4"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>Mvh <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="at">k=</span><span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a>A <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">9</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb51-3"><a href="#cb51-3"></a>T <span class="ot">=</span> A<span class="sc">%*%</span>Mvh</span>
+<span id="cb51-4"><a href="#cb51-4"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2]
@@ -633,39 +647,44 @@ Figure&nbsp;3: Line.1.
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="fl">9.5</span>) </span>
-<span id="cb49-2"><a href="#cb49-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.5</span>,<span class="fl">11.5</span>) </span>
-<span id="cb49-3"><a href="#cb49-3"></a></span>
-<span id="cb49-4"><a href="#cb49-4"></a><span class="co">#| label: fig-3.2.b</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a><span class="co">#| fig-cap: "3.2.b."</span></span>
-<span id="cb49-6"><a href="#cb49-6"></a><span class="co">#| fig-width: 3</span></span>
-<span id="cb49-7"><a href="#cb49-7"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb49-8"><a href="#cb49-8"></a><span class="co">#| scale: "80%"</span></span>
-<span id="cb49-9"><a href="#cb49-9"></a><span class="co">#| fig-align: "center"</span></span>
-<span id="cb49-10"><a href="#cb49-10"></a><span class="co">#| size: "scriptsize"</span></span>
-<span id="cb49-11"><a href="#cb49-11"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb49-12"><a href="#cb49-12"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
-<span id="cb49-13"><a href="#cb49-13"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
-<span id="cb49-14"><a href="#cb49-14"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
-<span id="cb49-15"><a href="#cb49-15"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb49-16"><a href="#cb49-16"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb49-17"><a href="#cb49-17"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb49-18"><a href="#cb49-18"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb49-19"><a href="#cb49-19"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb49-20"><a href="#cb49-20"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb49-21"><a href="#cb49-21"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb49-22"><a href="#cb49-22"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb49-23"><a href="#cb49-23"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">det</span>(A) <span class="co">#For area of the parallelogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>basis.vector<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="fl">9.5</span>) </span>
+<span id="cb55-2"><a href="#cb55-2"></a>basis.vector<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.5</span>,<span class="fl">11.5</span>) </span>
+<span id="cb55-3"><a href="#cb55-3"></a>p0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb55-4"><a href="#cb55-4"></a>p1 <span class="ot">=</span> basis.vector<span class="fl">.1</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a>p2 <span class="ot">=</span> basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a>p3 <span class="ot">=</span> basis.vector<span class="fl">.2</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb55-8"><a href="#cb55-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p0[<span class="dv">1</span>], <span class="at">y =</span> p0[<span class="dv">2</span>], <span class="at">xend =</span> p1[<span class="dv">1</span>], <span class="at">yend =</span> p1[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1[<span class="dv">1</span>], <span class="at">y =</span> p1[<span class="dv">2</span>], <span class="at">xend =</span> p2[<span class="dv">1</span>], <span class="at">yend =</span> p2[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb55-10"><a href="#cb55-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p2[<span class="dv">1</span>], <span class="at">y =</span> p2[<span class="dv">2</span>], <span class="at">xend =</span> p3[<span class="dv">1</span>], <span class="at">yend =</span> p3[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> p3[<span class="dv">1</span>], <span class="at">y =</span> p3[<span class="dv">2</span>], <span class="at">xend =</span> p0[<span class="dv">1</span>], <span class="at">yend =</span> p0[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb55-13"><a href="#cb55-13"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb55-14"><a href="#cb55-14"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb55-15"><a href="#cb55-15"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Lab3WriteUp_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Parallelogram 4
+</figcaption>
+<div aria-describedby="fig-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lab3WriteUp_files/figure-html/fig-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
+</div>
 </figure>
 </div>
 </div>
 </div>
 <p></p>
+<p>Similar to the differnce between <a href="#fig-4" class="quarto-xref">Figure&nbsp;4</a> and <a href="#fig-5" class="quarto-xref">Figure&nbsp;5</a>, <a href="#fig-6" class="quarto-xref">Figure&nbsp;6</a> is even further stretched compared to the shapes in part a and b. But because it has the same matrix A, it has the same area as the past parallelograms.</p>
 </section>
 </section>
 <section id="question-4" class="level1" data-number="4">
@@ -780,11 +799,37 @@ Figure&nbsp;3: Line.1.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">times=</span><span class="dv">9</span>))</span>
-<span id="cb50-2"><a href="#cb50-2"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">20</span>, <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to=</span> <span class="dv">18</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="at">each=</span> <span class="dv">2</span>))</span>
-<span id="cb50-3"><a href="#cb50-3"></a>group <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span> <span class="dv">11</span>, <span class="at">by=</span><span class="dv">1</span>), <span class="at">each=</span><span class="dv">2</span>)</span>
-<span id="cb50-4"><a href="#cb50-4"></a>ladder <span class="ot">=</span> <span class="fu">data.frame</span>(x, y, group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">times=</span><span class="dv">9</span>)) </span>
+<span id="cb56-2"><a href="#cb56-2"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">20</span>, <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to=</span> <span class="dv">18</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="at">each=</span> <span class="dv">2</span>))</span>
+<span id="cb56-3"><a href="#cb56-3"></a>group <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span> <span class="dv">11</span>, <span class="at">by=</span><span class="dv">1</span>), <span class="at">each=</span><span class="dv">2</span>)</span>
+<span id="cb56-4"><a href="#cb56-4"></a>ladder <span class="ot">=</span> <span class="fu">data.frame</span>(x, y, group)</span>
+<span id="cb56-5"><a href="#cb56-5"></a>ladder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   x  y group
+1  0  0     1
+2  0 20     1
+3  1  0     2
+4  1 20     2
+5  0  2     3
+6  1  2     3
+7  0  4     4
+8  1  4     4
+9  0  6     5
+10 1  6     5
+11 0  8     6
+12 1  8     6
+13 0 10     7
+14 1 10     7
+15 0 12     8
+16 1 12     8
+17 0 14     9
+18 1 14     9
+19 0 16    10
+20 1 16    10
+21 0 18    11
+22 1 18    11</code></pre>
+</div>
 </div>
 <p></p>
 </section>
@@ -795,26 +840,26 @@ Figure&nbsp;3: Line.1.
 <div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
-<span id="cb51-3"><a href="#cb51-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb51-4"><a href="#cb51-4"></a>                  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
-<span id="cb51-5"><a href="#cb51-5"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb51-6"><a href="#cb51-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb51-7"><a href="#cb51-7"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb51-9"><a href="#cb51-9"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb51-10"><a href="#cb51-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb51-11"><a href="#cb51-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb51-12"><a href="#cb51-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb51-13"><a href="#cb51-13"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb51-14"><a href="#cb51-14"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
+<span id="cb58-3"><a href="#cb58-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4"></a>                  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
+<span id="cb58-5"><a href="#cb58-5"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb58-6"><a href="#cb58-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb58-7"><a href="#cb58-7"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb58-8"><a href="#cb58-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb58-9"><a href="#cb58-9"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb58-10"><a href="#cb58-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb58-11"><a href="#cb58-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb58-12"><a href="#cb58-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb58-13"><a href="#cb58-13"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb58-14"><a href="#cb58-14"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-ladder" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-ladder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: A ladder.
+Figure&nbsp;7: A ladder.
 </figcaption>
 <div aria-describedby="fig-ladder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Lab3WriteUp_files/figure-html/fig-ladder-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
@@ -825,19 +870,19 @@ Figure&nbsp;4: A ladder.
 </div>
 <p></p>
 </section>
-<section id="part-c-2" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="part-c-2"><span class="header-section-number">4.3</span> Part c</h2>
+<section id="part-c-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="part-c-3"><span class="header-section-number">4.3</span> Part c</h2>
 <p>Use <code>as.matrix()</code> to create a <span class="math inline">\(22 \times 2\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span> containing the <code>x</code> and <code>y</code> observations from the <code>ladder</code> data frame. Use matrix multiplication to compute <span class="math display">\[\mathbf{T} = \mathbf{A} \mathbf{M}_h.\]</span> Recall, <span class="math display">\[\mathbf{M}_h = \begin{bmatrix} 1 &amp; 0 \\ k &amp; 1 \end{bmatrix}\]</span> and use <span class="math inline">\(k=0.5.\)</span></p>
 <p><strong>Solution</strong></p>
 <p></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>A <span class="ot">=</span> <span class="fu">as.matrix</span>(ladder[ ,<span class="sc">-</span><span class="dv">3</span>])</span>
-<span id="cb52-2"><a href="#cb52-2"></a>k<span class="ot">=</span><span class="fl">0.5</span></span>
-<span id="cb52-3"><a href="#cb52-3"></a>Mh<span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, k, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb52-4"><a href="#cb52-4"></a>T<span class="ot">=</span> A <span class="sc">%*%</span> Mh</span>
-<span id="cb52-5"><a href="#cb52-5"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>A <span class="ot">=</span> <span class="fu">as.matrix</span>(ladder[ ,<span class="sc">-</span><span class="dv">3</span>]) <span class="co"># this creates a matrix with x and y observations by removing   the group index.</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>k<span class="ot">=</span><span class="fl">0.5</span></span>
+<span id="cb59-3"><a href="#cb59-3"></a>Mh<span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, k, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb59-4"><a href="#cb59-4"></a>T<span class="ot">=</span> A <span class="sc">%*%</span> Mh</span>
+<span id="cb59-5"><a href="#cb59-5"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>      [,1] [,2]
@@ -870,47 +915,75 @@ Figure&nbsp;4: A ladder.
 <section id="part-d-2" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="part-d-2"><span class="header-section-number">4.4</span> Part d</h2>
 <p>Create a data frame <code>leaning.ladder</code> with the <code>x</code> and <code>y</code> equal to the first and second column of <span class="math inline">\(\mathbf{T}\)</span>, respectively, and the same values of <code>group</code> from <code>ladder</code>.</p>
+<p><strong>Solution</strong></p>
 <p></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>leaning.ladder <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>T[, <span class="dv">1</span>],</span>
-<span id="cb54-2"><a href="#cb54-2"></a>                            <span class="at">y=</span>T[, <span class="dv">2</span>], </span>
-<span id="cb54-3"><a href="#cb54-3"></a>                            <span class="at">group =</span> group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>leaning.ladder <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>T[, <span class="dv">1</span>], <span class="co">#this uses exclusively the first index from T</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>                            <span class="at">y=</span>T[, <span class="dv">2</span>], <span class="co">#this uses exclusively the first index from T</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a>                            <span class="at">group =</span> group)</span>
+<span id="cb61-4"><a href="#cb61-4"></a>leaning.ladder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>    x  y group
+1   0  0     1
+2  10 20     1
+3   1  0     2
+4  11 20     2
+5   1  2     3
+6   2  2     3
+7   2  4     4
+8   3  4     4
+9   3  6     5
+10  4  6     5
+11  4  8     6
+12  5  8     6
+13  5 10     7
+14  6 10     7
+15  6 12     8
+16  7 12     8
+17  7 14     9
+18  8 14     9
+19  8 16    10
+20  9 16    10
+21  9 18    11
+22 10 18    11</code></pre>
+</div>
 </div>
 <p></p>
 </section>
 <section id="part-e-2" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="part-e-2"><span class="header-section-number">4.5</span> Part e</h2>
 <p>Remove <code>eval: false</code> in the code below. The result should look like a ladder and a very rectangular house if part a is correct. The new leaning ladder should look like it is leaning on the house.</p>
+<p><strong>Solution</strong></p>
 <p></p>
 <div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
-<span id="cb55-3"><a href="#cb55-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Starting Ladder"</span>)) <span class="sc">+</span></span>
-<span id="cb55-4"><a href="#cb55-4"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> leaning.ladder, </span>
-<span id="cb55-5"><a href="#cb55-5"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Leaning Ladder"</span>)) <span class="sc">+</span></span>
-<span id="cb55-6"><a href="#cb55-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
-<span id="cb55-7"><a href="#cb55-7"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb55-8"><a href="#cb55-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb55-9"><a href="#cb55-9"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb55-10"><a href="#cb55-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb55-11"><a href="#cb55-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb55-13"><a href="#cb55-13"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb55-14"><a href="#cb55-14"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb55-15"><a href="#cb55-15"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb55-16"><a href="#cb55-16"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb55-17"><a href="#cb55-17"></a>  <span class="fu">scale_color_manual</span>(<span class="st">""</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"grey"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
+<span id="cb63-3"><a href="#cb63-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Starting Ladder"</span>)) <span class="sc">+</span></span>
+<span id="cb63-4"><a href="#cb63-4"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> leaning.ladder, </span>
+<span id="cb63-5"><a href="#cb63-5"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Leaning Ladder"</span>)) <span class="sc">+</span></span>
+<span id="cb63-6"><a href="#cb63-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
+<span id="cb63-7"><a href="#cb63-7"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb63-8"><a href="#cb63-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb63-9"><a href="#cb63-9"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb63-11"><a href="#cb63-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb63-12"><a href="#cb63-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb63-13"><a href="#cb63-13"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb63-14"><a href="#cb63-14"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb63-15"><a href="#cb63-15"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb63-16"><a href="#cb63-16"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb63-17"><a href="#cb63-17"></a>  <span class="fu">scale_color_manual</span>(<span class="st">""</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"grey"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-ladder2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-ladder2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: A ladder and a leaning ladder.
+Figure&nbsp;8: A ladder and a leaning ladder.
 </figcaption>
 <div aria-describedby="fig-ladder2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Lab3WriteUp_files/figure-html/fig-ladder2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="288">
